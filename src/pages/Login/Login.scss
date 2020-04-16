@@ -3,7 +3,7 @@
 .background {
   width: 100vw;
   height: 100vh;
-  background: url("../../shared/images/main-bg.jpg") no-repeat center
+  background: url("../../shared/images/main_bg.png") no-repeat center
     center/cover;
 
   &::before {
@@ -15,15 +15,6 @@
     width: 100%;
     height: 100%;
   }
-}
-
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 60px;
-  width: 100vw;
-  background: #fff;
 }
 
 .login-container {
@@ -70,12 +61,22 @@
   }
 
   .input-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
     margin: 32px auto;
     font-family: $roboto;
+
+    h4 {
+      font-family: Roboto;
+      font-size: 13px;
+      color: #f46262;
+      position: absolute;
+      left: 80px;
+      top: -10px;
+    }
   }
 
   .bottom-text {

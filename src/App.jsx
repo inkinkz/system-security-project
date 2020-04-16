@@ -10,6 +10,8 @@ import {
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
 import Login from "./pages/Login/Login";
+import UserDashBaord from "./pages/DashBoard/UserDashBoard";
+import NavBar from "./components/NavBar/NavBar";
 
 const theme = createMuiTheme({
   palette: {
@@ -20,14 +22,15 @@ const theme = createMuiTheme({
 const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
+      <NavBar />
       <Router>
         <Switch>
           <Route path="/" exact>
             <Login />
           </Route>
-          {/* <Route path="/todo">
-        <Todo />
-        </Route>*/}
+          <Route path="/dashboard">
+            <UserDashBaord />
+          </Route>
           <Redirect to="/" />
         </Switch>
       </Router>
