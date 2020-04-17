@@ -19,7 +19,7 @@ const UserDashBoard = () => {
               name: val.info.name,
               id: snap.key,
               status: val.status,
-              remark: "",
+              remark: val.remark,
             });
           }
         });
