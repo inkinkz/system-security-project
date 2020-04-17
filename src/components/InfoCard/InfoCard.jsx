@@ -14,7 +14,7 @@ const InfoCard = (props) => {
       <ul>
         <li>
           <div className="topic">Student ID</div>
-          <div className="info">{props.info.name ? localStorage.id : ""}</div>
+          <div className="info">{props.info.name ? props.id : ""}</div>
         </li>
       </ul>
       <ul>

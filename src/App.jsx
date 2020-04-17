@@ -10,7 +10,9 @@ import {
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
 import Login from "./pages/Login/Login";
-import UserDashBaord from "./pages/DashBoard/UserDashBoard";
+import UserDashBoard from "./pages/DashBoard/UserDashBoard";
+import AdminDashBoard from "./pages/DashBoard/AdminDashBoard";
+import ManageStudent from "./pages/DashBoard/ManageStudent";
 import NavBar from "./components/NavBar/NavBar";
 
 const theme = createMuiTheme({
@@ -29,7 +31,13 @@ const App = () => {
             <Login />
           </Route>
           <Route path="/dashboard">
-            <UserDashBaord />
+            <UserDashBoard />
+          </Route>
+          <Route path="/admin/dashboard">
+            <AdminDashBoard />
+          </Route>
+          <Route path="/admin/manage/:studentId">
+            <ManageStudent />
           </Route>
           <Redirect to="/" />
         </Switch>

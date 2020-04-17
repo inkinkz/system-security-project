@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./SideBar.scss";
 
 import AssignmentIcon from "@material-ui/icons/Assignment";
@@ -18,7 +18,9 @@ const SideBar = () => {
   return (
     <div className="side-bar">
       <div className="user-info">
-        <div className="greeting">Hello,</div>
+        <div className="greeting">
+          Hello{localStorage.accountType === "admin" ? " Admin" : ""},
+        </div>
         <div className="name">{name.substring(0, name.indexOf(" "))} </div>
         <div className="type">{localStorage.getItem("accountType")}</div>
       </div>

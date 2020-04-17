@@ -20,14 +20,11 @@ const CourseTable = (props) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log(props.data);
     const temp = [];
-    props.courses.map((course) => {
-      console.log(course);
+    props.courses.forEach((course) => {
       temp.push({
         course_name: course.course_name,
         credits: course.credits,
-        status: course.status,
         grade: course.grade,
         remark: course.remark,
       });
@@ -46,9 +43,6 @@ const CourseTable = (props) => {
               Credit(s)
             </TableCell>
             <TableCell style={{ color: "#0000008f" }} align="right">
-              Status
-            </TableCell>
-            <TableCell style={{ color: "#0000008f" }} align="right">
               Result
             </TableCell>
             <TableCell style={{ color: "#0000008f" }} align="right">
@@ -63,12 +57,6 @@ const CourseTable = (props) => {
                 {data.course_name}
               </TableCell>
               <TableCell align="right">{data.credits}</TableCell>
-              <TableCell
-                align="right"
-                style={{ color: data.status === "Graded" ? "green" : "red" }}
-              >
-                {data.status}
-              </TableCell>
               <TableCell align="right">{data.grade}</TableCell>
               <TableCell align="right">{data.remark}</TableCell>
             </TableRow>

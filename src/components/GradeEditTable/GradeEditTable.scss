@@ -1,0 +1,45 @@
+.grade-edit-table-container {
+  position: relative;
+  margin-top: 34px;
+  margin-left: 14px;
+  height: 500px;
+  width: 816px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  .table-title {
+    margin: 24px 24px 17px 24px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.0015em;
+  }
+}
+
+.status-text {
+  position: absolute;
+  right: 24px;
+  top: 28px;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.discard-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.16px;
+
+  color: #cf658d;
+  position: absolute;
+  bottom: 33px;
+  right: 193px;
+  cursor: pointer;
+
+  &:hover {
+    color: #bd4774;
+  }
+}
