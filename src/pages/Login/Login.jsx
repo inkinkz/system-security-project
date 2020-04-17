@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import "./Login.scss";
 
@@ -28,6 +28,12 @@ const Login = () => {
   const [redirect, setRedirect] = useState({ path: "", go: false });
   const [showPassword, setShowPassword] = useState(false);
 
+  useEffect(() => {
+    if (localStorage.getItem("id")) {
+      setRedirect({ path: "dashboard", go: true });
+    }
+  }, []);
+
   const handleChange = (prop) => (event) => {
     setCredentials({ ...credentials, [prop]: event.target.value });
   };
@@ -41,7 +47,7 @@ const Login = () => {
           const type = snap.type.toString();
           // Correct Password
           if (snap.password.toString() === credentials.password) {
-            setCurrentUser(credentials.id, snap.info.name);
+            setCurrentUser(credentials.id, snap.info.name, type);
             setRedirect({
               path: type === "student" ? "dashboard" : "admin/dashboard",
               go: true,
@@ -61,9 +67,10 @@ const Login = () => {
     );
   };
 
-  const setCurrentUser = (id, name) => {
+  const setCurrentUser = (id, name, type) => {
     localStorage.setItem("id", id);
     localStorage.setItem("name", name);
+    localStorage.setItem("accountType", type);
   };
 
   const onEnter = (event) => {
