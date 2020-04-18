@@ -1,5 +1,6 @@
 import React from "react";
 import "./SideBar.scss";
+import { Link } from "react-router-dom";
 
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import StarIcon from "@material-ui/icons/Star";
@@ -31,7 +32,7 @@ const SideBar = () => {
           <div className="icon">
             <AssignmentIcon />
           </div>
-          Overall Result
+          <Link to="/dashboard"> Overall Result</Link>
         </li>
         <li>
           <div className="icon">
