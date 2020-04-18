@@ -32,7 +32,9 @@ const SideBar = () => {
           <div className="icon">
             <AssignmentIcon />
           </div>
-          <Link to="/dashboard"> Overall Result</Link>
+          <Link className="link" to="/dashboard">
+            Overall Result
+          </Link>
         </li>
         <li>
           <div className="icon">

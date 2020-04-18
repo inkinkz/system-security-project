@@ -53,6 +53,11 @@
     list-style: none;
     margin: 26px 18px;
 
+    .link {
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.87);
+    }
+
     li {
       display: flex;
       align-items: center;
