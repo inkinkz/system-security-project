@@ -29,8 +29,13 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("id")) {
-      setRedirect({ path: "dashboard", go: true });
+    if (localStorage.id === "admin") {
+      setRedirect({
+        path: "admin/dashboard",
+        go: true,
+      });
+    } else if (localStorage.getItem("id")) {
+      setRedirect({ path: `dashboard/${localStorage.id}`, go: true });
     }
   }, []);
 
@@ -49,7 +54,10 @@ const Login = () => {
           if (snap.password.toString() === credentials.password) {
             setCurrentUser(credentials.id, snap.info.name, type);
             setRedirect({
-              path: type === "student" ? "dashboard" : "admin/dashboard",
+              path:
+                type === "student"
+                  ? `dashboard/${credentials.id}`
+                  : "admin/dashboard",
               go: true,
             });
             // Incorrect Password

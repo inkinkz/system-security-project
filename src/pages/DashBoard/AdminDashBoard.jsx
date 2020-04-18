@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.scss";
+import { Redirect } from "react-router-dom";
+
 import { database } from "../../firebase";
 import SideBar from "../../components/SideBar/SideBar";
 import UsersTable from "../../components/UsersTable/UsersTable";
@@ -30,15 +32,17 @@ const UserDashBoard = () => {
     fetchData();
   }, []);
 
-  return (
-    <div className="container">
-      <SideBar />
-      <div className="dashboard">
-        <div className="title">Grade Result</div>
-        <UsersTable list={usersList} />
+  if (!localStorage.getItem("id")) return <Redirect to="/" />;
+  else
+    return (
+      <div className="container">
+        <SideBar />
+        <div className="dashboard">
+          <div className="title">Grade Result</div>
+          <UsersTable list={usersList} />
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default UserDashBoard;
